@@ -1,0 +1,13 @@
+<app-components-container title="Available Dogs">
+  @if(isFetching() && !error()){
+    <p class="fallback-text">Waiting for data fetching...</p>
+  }
+  @if(error()){
+    <p class="fallback-text">An error occurred: {{ error()}}</p>
+  }
+  @if (dogs()) {
+    <app-dog-search/>
+    <app-home [dogs]="dogs()!"  />
+  }
+
+</app-components-container>

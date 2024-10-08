@@ -1,0 +1,20 @@
+<ul>
+  @for (dog of limitedDogs();track $index) {
+    <li class="dog-item">
+      <button (click)="onSelectDog(dog)" >
+        <img [src]="dog" alt="Dog Image" />
+      </button>
+    </li>
+  }
+  @if(selectedDog()){
+    <div class="overlay">
+    <div class="overlay-content">
+      <button class="close-btn" (click)="clearSelectedDog()">X</button>
+      <img [src]="selectedDog()" alt="Selected Dog" class="large-image" />
+    </div>
+    </div>
+  }
+</ul>
+
+
+
